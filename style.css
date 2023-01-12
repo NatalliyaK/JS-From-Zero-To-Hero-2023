@@ -7,7 +7,7 @@
 
 a {
     text-decoration: none;
-    color: white;
+    color: inherit;
 }
 
 li {
@@ -50,12 +50,14 @@ img {
 }
 
 .nav-list__item {
+    color: white;
     padding: 10px;
     font-size: 22px;
     font-weight: normal;
 }
 
-.nav-list__item:hover {
+.nav-list__item:hover,
+.contact__item:hover {
     color: #15ea44;
 }
 
@@ -94,3 +96,25 @@ img {
     fill: #31db9a;
 }
 
+.information__title {
+    text-align: center;
+    padding: 20px 0 20px;
+}
+
+.contacts {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact__link {
+    display: flex;
+    align-items: center;
+}
+
+.contact__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    fill: #31db9a;
+}
