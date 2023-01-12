@@ -118,3 +118,8 @@ img {
     margin-right: 10px;
     fill: #31db9a;
 }
+
+.about__title {
+    padding: 35px 0 30px;
+    text-align: center;
+}
