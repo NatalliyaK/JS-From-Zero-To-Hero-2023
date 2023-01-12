@@ -120,7 +120,8 @@ img {
 }
 
 .about__title,
-.edukation__title {
+.edukation__title,
+.skills__title {
     padding: 35px 0 30px;
     text-align: center;
 }
@@ -142,5 +143,25 @@ img {
 
 .certificate__item:hover {
     transform: scale(2.6);
+}
+
+.skills__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skills-item {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.skills-icon {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    padding-right: 5px;
 }
 
