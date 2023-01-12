@@ -121,7 +121,8 @@ img {
 
 .about__title,
 .edukation__title,
-.skills__title {
+.skills__title,
+.languages__title {
     padding: 35px 0 30px;
     text-align: center;
 }
@@ -164,4 +165,5 @@ img {
     cursor: pointer;
     padding-right: 5px;
 }
+
 
