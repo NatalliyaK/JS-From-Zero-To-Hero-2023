@@ -20,12 +20,9 @@ img {
 
 :root {
     --text: 'Arial';
-}
-
-:root {
     --colorbBackground: linear-gradient(180deg, #05803c 0%, #31db9a 100%);
+    --colorFooter: linear-gradient(180deg, #31db9a 0%, #05803c 100%);
 }
-
 
 .wrapper {
     max-width: 1170px;
@@ -166,4 +163,17 @@ img {
     padding-right: 5px;
 }
 
+.footer {
+    background: var(--colorFooter);
+    padding-bottom: 4%;
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_svg {
+    fill: white;
+}
 
