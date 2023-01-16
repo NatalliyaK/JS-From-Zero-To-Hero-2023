@@ -5,10 +5,35 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Resume</title>
     <link rel="icon" href="images/logo.svg">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-<header class="header wrapper">
+<div class="header__mob">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="popup">
+    <section class="popup__header">
+        <nav class="popup__navigation">
+            <ul class="popup__link">
+                <li class="popup__link-item">
+                    <a class="nav-list__item" href="#information">Contact</a>
+                </li>
+                <li class="popup__link-item">
+                    <a class="nav-list__item" href="#skills">Skills</a>
+                </li>
+                <li class="popup__link-item">
+                    <a class="nav-list__item" href="#edukation">Edukation</a>
+                </li>
+                <li class="popup__link-item">
+                    <a class="nav-list__item" href="#about">About me</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</div>
+<header class="header header--background">
     <ul class="nav-list">
         <li><a class="nav-list__item" href="#information" role="navigation">Contact</a></li>
         <li><a class="nav-list__item" href="#skills" role="navigation">Skills</a></li>
@@ -17,7 +42,7 @@
     </ul>
 </header>
 <main>
-    <section class="banner">
+    <section class="banner banner--gradient">
         <div class="banner__wrapper wrapper">
             <div class="banner__image">
                 <figure>

@@ -1,0 +1,11 @@
+:root {
+    --text: 'Arial';
+    --colorbBackground: linear-gradient(180deg, #05803c 0%, #31db9a 100%);
+    --colorFooter: linear-gradient(180deg, #31db9a 0%, #05803c 100%);
+    --text-color: #FFFFFFFF;
+    --main-color: #05803c;
+    --header-color: #31DB9AFF;
+    --hover-item: #15ea44;
+    --svg-color: #31db9a;
+}
+
