@@ -1,6 +1,7 @@
 const navHeader = document.querySelector('.header');
-const menu = document.querySelector('.header__mob');
-const popup = document.querySelector('.popup');
+    menu = document.querySelector('.header__mob'),
+    popup = document.querySelector('.popup'),
+    navLists = document.querySelectorAll('.nav-list__item');
 
 window.addEventListener('scroll', changeBackground);
 
@@ -9,6 +10,16 @@ menu.addEventListener('click', showMenu);
 function showMenu() {
     menu.classList.toggle('open');
     popup.classList.toggle('active');
+}
+
+navLists.forEach(function (item) {
+    item.addEventListener('click', closePopup);
+});
+
+function closePopup () {
+    popup.classList.remove('active');
+    menu.classList.remove('open');
+    menu.classList.add('header__mob');
 }
 
 function changeBackground () {
@@ -20,37 +31,35 @@ function changeBackground () {
     }
 }
 
-
 window.addEventListener('load', function() {
     carouselRUN();
 }, false);
 
-function carouselRUN() {
-    var carousel = document.getElementById("carousel");
-    var scene = document.getElementById("scene");
-    var carousel_items_arrey = document.getElementsByClassName("carousel_item");
-    var carousel_btn = document.getElementById("carousel_btn");
-    var n = carousel_items_arrey.length;
-    var curr_carousel_items_arrey = 0;
-    var theta = Math.PI * 2 / n;
-    let interval = null;
-    var autoCarousel = carousel.dataset.auto;
+let carousel = document.getElementById("carousel"),
+    scene = document.getElementById("scene"),
+    carouselItemsArray = document.getElementsByClassName("carousel_item"),
+    carousel_btn = document.getElementById("carousel_btn"),
+    n = carouselItemsArray.length,
+    currCarouselItemsArray = 0,
+    theta = Math.PI * 2 / n,
+    interval = null,
+    autoCarousel = carousel.dataset.auto;
 
-    setupCarousel(n, parseFloat(getComputedStyle(carousel_items_arrey[0]).width));
+function carouselRUN() {
+    setupCarousel(n, parseFloat(getComputedStyle(carouselItemsArray[0]).width));
     window.addEventListener('resize', function() {
         clearInterval(interval);
-        setupCarousel(n, parseFloat(getComputedStyle(carousel_items_arrey[0]).width));
+        setupCarousel(n, parseFloat(getComputedStyle(carouselItemsArray[0]).width));
     }, false);
     setupNavigation();
-
 
     function setupCarousel(n, width) {
         let apothem = width / (2 * Math.tan(Math.PI / n));
         scene.style.transformOrigin = `50% 50% ${- apothem}px`;
 
         for (let i = 1; i < n; i++) {
-            carousel_items_arrey[i].style.transformOrigin = `50% 50% ${- apothem}px`;
-            carousel_items_arrey[i].style.transform = `rotateY(${i * theta}rad)`;
+            carouselItemsArray[i].style.transformOrigin = `50% 50% ${- apothem}px`;
+            carouselItemsArray[i].style.transform = `rotateY(${i * theta}rad)`;
         }
 
         if (autoCarousel === "true") {
@@ -58,20 +67,18 @@ function carouselRUN() {
         }
     }
 
-
-
     function setupNavigation() {
         carousel_btn.addEventListener('click', function(e) {
             e.stopPropagation();
             let target = e.target;
 
             if (target.classList.contains('next')) {
-                curr_carousel_items_arrey++;
+                currCarouselItemsArray++;
             } else if (target.classList.contains('prev')) {
-                curr_carousel_items_arrey--;
+                currCarouselItemsArray--;
             }
             clearInterval(interval);
-            scene.style.transform = `rotateY(${curr_carousel_items_arrey * -theta}rad)`;
+            scene.style.transform = `rotateY(${currCarouselItemsArray * -theta}rad)`;
 
             if (autoCarousel === "true") {
                 setCarouselInterval();
@@ -81,8 +88,8 @@ function carouselRUN() {
 
     function setCarouselInterval() {
         interval = setInterval(function() {
-            curr_carousel_items_arrey++;
-            scene.style.transform = `rotateY(${(curr_carousel_items_arrey) * -theta}rad)`;
+            currCarouselItemsArray++;
+            scene.style.transform = `rotateY(${(currCarouselItemsArray) * -theta}rad)`;
         }, 3000);
     }
 }

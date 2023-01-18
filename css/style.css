@@ -80,6 +80,10 @@ html {
     margin: 0;
 }
 
+.popup__link-item--color a:hover {
+   color: var(--main-color);
+}
+
 .popup__link {
     flex-direction: column;
     display: flex;
@@ -100,6 +104,11 @@ html {
     right: 0;
 }
 
+.header__mob.open {
+    right: 83px;
+    position: fixed;
+}
+
 .header__mob.open span:nth-child(1) {
     transform: rotate(45deg);
     top: 13px;
@@ -116,7 +125,6 @@ html {
 }
 
 .header__mob.open span{
-    margin: 0;
     position: absolute;
 }
 
@@ -164,6 +172,7 @@ html {
 .banner__wrapper {
     display: flex;
     justify-content: space-evenly;
+    gap: 10px;
 }
 
 .banner__photo {
@@ -219,7 +228,7 @@ html {
 .edukation__title,
 .skills__title,
 .languages__title {
-    padding: 35px 0 30px;
+    padding: 75px 0 30px;
     text-align: center;
     text-transform: uppercase;
 }
@@ -260,7 +269,6 @@ html {
 .skills-icon {
     width: 120px;
     height: 120px;
-    cursor: pointer;
     padding-right: 5px;
 }
 
@@ -279,12 +287,126 @@ html {
     fill: var(--text-color);
 }
 
+@media (max-width: 1300px) {
+    .wrapper {
+        max-width: 1120px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .wrapper {
+        max-width: 880px;
+    }
+
+    .contacts {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 980px) {
+    .wrapper {
+        max-width: 700px;
+    }
+
+    html {
+        font-size: 1.4rem;
+    }
+
+    .certificate__item:hover {
+        transform: scale(1.5);
+    }
+}
+
 @media (max-width: 768px){
+    .wrapper {
+        max-width: 550px;
+    }
+
+    .skills-item {
+        width: 50%;
+    }
+
+    .skills-item:last-child {
+        width: 100%;
+    }
+
     .header {
         display: none;
     }
 
     .header__mob {
         display: block;
+    }
+}
+
+@media (max-width: 660px){
+    .wrapper {
+        max-width: 530px;
+    }
+
+    .certificate {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 620px){
+    .wrapper {
+        max-width: 400px;
+    }
+
+    html {
+        font-size: 1.2rem;
+    }
+
+    #scene {
+        width: 60%;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 462px){
+    .wrapper {
+        max-width: 300px;
+    }
+
+    .banner__wrapper {
+        flex-direction: column;
+    }
+
+    .skills-item {
+        margin-top: 10px;
+    }
+
+    .skills-item {
+        justify-content: initial;
+    }
+
+    .skills__list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .skills-item:last-child {
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 400px){
+    .wrapper {
+        max-width: 280px;
+    }
+
+    .edukation__title ~ ul li {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 320px){
+    .wrapper {
+        max-width: 224px;
     }
 }
